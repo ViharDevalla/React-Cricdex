@@ -1,11 +1,12 @@
 import React from 'react'
-import user from '../assets/defaultplayer.jpg'
 import '../css/style.css'
 
 function PlayerCard(props) {
     
-    const {name,imgsrc,type,country,teams} = props;
-    // 'https://www.cricapi.com/playerpic/35320.jpg'
+    var {name,imgsrc,type,country,teams} = props;
+    if(imgsrc===null | imgsrc===''){
+        imgsrc='https://icon-library.com/images/default-profile-icon/default-profile-icon-16.jpg'
+    }
     return (
         <div className='card'>
             <h2>{name}</h2>

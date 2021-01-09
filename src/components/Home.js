@@ -34,9 +34,11 @@ function Home() {
             name:search,
         }
          axios.post(playerFinder,playerFinderData).then(function(response){
+            setTimeout(() => setLoading(false),1000) 
             console.log(response.data)
-             setPlayer(response.data.data) 
-        }).then(async function(){
+             setPlayer(response.data.data)
+             
+            }).then(async function(){
             for(i=0;i<player.length;i++){
                 await axios.post(playerStats,{apikey:api,pid:player[i].pid}).then(function(response){
                     console.log(response.data)
@@ -57,17 +59,13 @@ function Home() {
 
     return (
         <div>
-            {/* {
+        {
         loading === true ? (
             <div className="loading">
-              <img src={LoadingScreen} />
+              <img src={LoadingScreen} alt="Loading" />
             </div>
         ):
         (
-            <div className='backg'>
-            HOME
-            </div>
-        )} */}
             <div className='backg'>
                 <div className='headtext'>
                     React Cricdex
@@ -78,40 +76,40 @@ function Home() {
                 </div>
                 <div className='resdiv'>
                     {
-                        playerData.map((playerName,key)=>{
-                            return(
-                                <Popup key={key}
-                                    trigger={<p><PlayerCard name={playerName.name} imgsrc={playerName.imageURL} type={playerName.playingRole} country={playerName.country} teams={playerName.majorTeams}/></p>}
-                                    modal
-                                    nested
-                                >
-                                {close => (
-                                <div >
-                                    <button className="close" onClick={close}>
-                                    &times;
-                                    </button>
-                                    <PlayerDesc name={playerName.name} imgsrc={playerName.imageURL} age={playerName.currentAge} born={playerName.born} type={playerName.playingRole} country={playerName.country} teams={playerName.majorTeams} bio={playerName.profile} batting={playerName.data.batting} bowling={playerName.data.bowling}  />
-                                    <div className="actions">
-                                    <button
-                                        className="button"
-                                        onClick={() => {
-                                        console.log('modal closed ');
-                                        close();
-                                        }}
+                        loading === true ? (
+                            <div className="loading">
+                              <img src={LoadingScreen}  alt="Loading"/>
+                            </div>
+                        ):
+                        (
+                            playerData.map((playerName,key)=>{
+                                return(
+                                    
+                                    <Popup key={key}
+                                        trigger={<p><PlayerCard name={playerName.name} imgsrc={playerName.imageURL} type={playerName.playingRole} country={playerName.country} teams={playerName.majorTeams}/></p>}
+                                        modal
+                                        nested
                                     >
-                                        close modal
-                                    </button>
+                                    {close => (
+                                    <div>
+                                        <button className="close" onClick={close}>
+                                        &times;
+                                        </button>
+                                        <PlayerDesc name={playerName.name} imgsrc={playerName.imageURL} age={playerName.currentAge} born={playerName.born} type={playerName.playingRole} country={playerName.country} teams={playerName.majorTeams} bio={playerName.profile} batting={playerName.data.batting} bowling={playerName.data.bowling}  />
                                     </div>
-                                </div>
-                                )}
-                            </Popup>
-                            )
-                        })
+                                    )}
+                                </Popup>
+                                
+                                )
+                            })
+                        )
                     }
 
                 </div>
                 
             </div>
+        )}
+            
         
         </div>
     )

@@ -12,13 +12,14 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 
-var i;
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
   
     return (
       <div
         hidden={value !== index}
+        id={`scrollable-auto-tabpanel-${index}`}
+        aria-labelledby={`scrollable-auto-tab-${index}`}
         {...other}
       >
         {value === index && (
@@ -46,9 +47,6 @@ function TabPanel(props) {
 function PlayerDesc(props) {
     const {name,imgsrc,type,country,teams,age,born,bio,bowling,batting} = props
     const [value, setValue] = useState(0);
-    for(i in batting){
-      console.log(batting.listA['50'])
-    }
     console.log("batting",typeof(batting))
       const rows = [];
       if(bowling.listA){
@@ -108,7 +106,7 @@ function PlayerDesc(props) {
                     </div>
                 </div>
                 <div className='right'>
-                <Tabs value={value} onChange={handleChange} >
+                <Tabs value={value} onChange={handleChange} scrollButtons="on" className='tabBar' >
                     <Tab label="Biograpghy"  className='tab'/>
                     <Tab label="Batting Stats"  className='tab'/>
                     <Tab label="Bowling Stats"  className='tab'/>

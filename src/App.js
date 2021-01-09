@@ -1,12 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 
-import LoadingScreen from './assets/loading.svg'
 import Home from './components/Home'
 import PlayerDesc from './components/PlayerDesc'
 import Header from './components/Header'

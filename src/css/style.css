@@ -193,3 +193,58 @@ a{
     margin:0px;
     padding:0px;
 }
+
+@media only screen and (max-width: 900px) {
+
+    .tabBar{
+        overflow:auto;
+    }
+
+   .popup-overlay{
+        background-color:rgba(0, 0, 0, 0.8);
+    }
+
+    .bigcard{
+        margin-right:50px;
+        margin-left:50px;
+        display: flow-root;
+        overflow: auto;
+        height:600px;
+        width:300px;
+    }
+
+    .search{
+        font-family: 'Maven Pro', sans-serif;
+        background-color:#dfcb94;
+        font-size: 25px;
+        width:100%;
+        height: 30px;
+        border-radius: 15px;
+        border: 1px #000 solid;
+        padding: 10px 10px 10px 25px;
+    }
+    
+    .submit{
+        font-family: 'Maven Pro', sans-serif;
+        width:40%;
+        font-size: 20px;
+        margin-left: 10px;
+        background-color: #ff9f44;
+        border: 1px;
+        padding: 5px 5px;
+        border-radius: 10px;
+    }
+
+    .left{
+        padding:5px;
+        width:100%;
+        min-height:100%;
+        background-color:#dfcb94 ;
+    }
+    .right{
+        padding:5px;
+        width:100%;
+        min-height:100%;  
+    }
+    
+  }
