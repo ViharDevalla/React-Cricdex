@@ -193,6 +193,9 @@ a{
     margin:0px;
     padding:0px;
 }
+.popup-overlay{
+    background-color:rgba(0, 0, 0, 0.8);
+}
 
 @media only screen and (max-width: 900px) {
 
@@ -246,5 +249,9 @@ a{
         width:100%;
         min-height:100%;  
     }
+
+    .close {
+       size:1000px;
+      }
     
   }
