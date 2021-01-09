@@ -10,7 +10,7 @@ function PlayerCard(props) {
         <div className='card'>
             <h2>{name}</h2>
             <div className="cardimg">
-                <img src={imgsrc} className='image' alt="https://i.pinimg.com/236x/c4/34/d8/c434d8c366517ca20425bdc9ad8a32de.jpg"/>
+                <img src={imgsrc} className='image' alt="Not Found"/>
             </div>
             <div className='cardbody'>
                 Type : {type}<br/>
