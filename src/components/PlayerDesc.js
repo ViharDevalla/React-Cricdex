@@ -70,21 +70,21 @@ function PlayerDesc(props) {
  
       const rows2 = [];
       if(batting.listA){
-        createData('listA', batting.listA['50'], batting.listA['100'],batting.listA['St'],batting.listA['Ct'], batting.listA['6s'],batting.listA['4s'],batting.listA['SR'],batting.listA['BF'],batting.listA['Ave'],batting.listA['HS'],batting.listA['Runs'],batting.listA['NO'],batting.listA['Inns'],batting.listA['Mat'])
+        rows2.push(createData('listA', batting.listA['50'], batting.listA['100'],batting.listA['St'],batting.listA['Ct'], batting.listA['6s'],batting.listA['4s'],batting.listA['SR'],batting.listA['BF'],batting.listA['Ave'],batting.listA['HS'],batting.listA['Runs'],batting.listA['NO'],batting.listA['Inns'],batting.listA['Mat']))
       }
       if(batting.firstClass){
-        createData('FirstClass', batting.firstClass['50'], batting.firstClass['100'],batting.firstClass['St'],batting.firstClass['Ct'], batting.firstClass['6s'],batting.firstClass['4s'],batting.firstClass['SR'],batting.firstClass['BF'],batting.firstClass['Ave'],batting.firstClass['HS'],batting.firstClass['Runs'],batting.firstClass['NO'],batting.firstClass['Inns'],batting.firstClass['Mat'])
+        rows2.push(createData('FirstClass', batting.firstClass['50'], batting.firstClass['100'],batting.firstClass['St'],batting.firstClass['Ct'], batting.firstClass['6s'],batting.firstClass['4s'],batting.firstClass['SR'],batting.firstClass['BF'],batting.firstClass['Ave'],batting.firstClass['HS'],batting.firstClass['Runs'],batting.firstClass['NO'],batting.firstClass['Inns'],batting.firstClass['Mat']))
 
       }
       if(batting.T20Is){
-        createData('T20Is', batting.T20Is['50'], batting.T20Is['100'],batting.T20Is['St'],batting.T20Is['Ct'], batting.T20Is['6s'],batting.T20Is['4s'],batting.T20Is['SR'],batting.T20Is['BF'],batting.T20Is['Ave'],batting.T20Is['HS'],batting.T20Is['Runs'],batting.T20Is['NO'],batting.T20Is['Inns'],batting.T20Is['Mat'])
+        rows2.push(createData('T20Is', batting.T20Is['50'], batting.T20Is['100'],batting.T20Is['St'],batting.T20Is['Ct'], batting.T20Is['6s'],batting.T20Is['4s'],batting.T20Is['SR'],batting.T20Is['BF'],batting.T20Is['Ave'],batting.T20Is['HS'],batting.T20Is['Runs'],batting.T20Is['NO'],batting.T20Is['Inns'],batting.T20Is['Mat']))
 
       }
       if(batting.ODIs){
-        createData('ODIs', batting.ODIs['50'], batting.ODIs['100'],batting.ODIs['St'],batting.ODIs['Ct'], batting.ODIs['6s'],batting.ODIs['4s'],batting.ODIs['SR'],batting.ODIs['BF'],batting.ODIs['Ave'],batting.ODIs['HS'],batting.ODIs['Runs'],batting.ODIs['NO'],batting.ODIs['Inns'],batting.ODIs['Mat'])
+        rows2.push(createData('ODIs', batting.ODIs['50'], batting.ODIs['100'],batting.ODIs['St'],batting.ODIs['Ct'], batting.ODIs['6s'],batting.ODIs['4s'],batting.ODIs['SR'],batting.ODIs['BF'],batting.ODIs['Ave'],batting.ODIs['HS'],batting.ODIs['Runs'],batting.ODIs['NO'],batting.ODIs['Inns'],batting.ODIs['Mat']))
       }
       if(batting.tests){
-        createData('Tests', batting.tests['50'], batting.tests['100'],batting.tests['St'],batting.tests['Ct'], batting.tests['6s'],batting.tests['4s'],batting.tests['SR'],batting.tests['BF'],batting.tests['Ave'],batting.tests['HS'],batting.tests['Runs'],batting.tests['NO'],batting.tests['Inns'],batting.ODIs['Mat'])
+        rows2.push(createData('Tests', batting.tests['50'], batting.tests['100'],batting.tests['St'],batting.tests['Ct'], batting.tests['6s'],batting.tests['4s'],batting.tests['SR'],batting.tests['BF'],batting.tests['Ave'],batting.tests['HS'],batting.tests['Runs'],batting.tests['NO'],batting.tests['Inns'],batting.ODIs['Mat']))
 
       }
  
