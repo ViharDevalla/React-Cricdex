@@ -4,7 +4,7 @@ import logo from '../assets/logo.png'
 function Header() {
     return (
         <div className="header">
-            <img src={logo} height='80px' alt='logo' className='logo' href="/"/>
+            <a href="/"><img src={logo} height='80px' alt='logo' className='logo' href="/"/></a>
         </div>
     )
 }

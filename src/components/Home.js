@@ -13,9 +13,11 @@ var playerStats = "https://cricapi.com/api/playerStats"
 
 function Home() {
     const [loading,setLoading] = useState(true);
+    const [styling,setStyling] = useState({"display":"none"});
     const [search,setSearch] = useState('');
     const [player,setPlayer] = useState([]);
     const [playerData,setPlayerData] = useState([]);
+
 
 
     useEffect(() => {
@@ -33,7 +35,8 @@ function Home() {
             apikey:api,
             name:search,
         }
-         axios.post(playerFinder,playerFinderData).then(function(response){
+        setStyling({"display":"block"})
+        axios.post(playerFinder,playerFinderData).then(function(response){
             setTimeout(() => setLoading(false),1000) 
             console.log(response.data)
              setPlayer(response.data.data)
@@ -73,7 +76,9 @@ function Home() {
                 <div className='searchdiv'>
                     <input type='text' placeholder='search for player' className="search" onChange={handleChange} />
                     <input type='submit' className='submit' onClick={handleClick}/>
+                    
                 </div>
+                <div className="warn" style={styling}>1.Double-click on submit if no results 2.Click on card for more info</div>
                 <div className='resdiv'>
                     {
                         loading === true ? (

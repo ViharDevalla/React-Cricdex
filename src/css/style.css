@@ -197,6 +197,13 @@ a{
     background-color:rgba(0, 0, 0, 0.8);
 }
 
+.warn{
+    font-family: 'Maven Pro', sans-serif;
+    font-size: 10px;
+    text-align:center;
+    align-items:center;
+    justify-content:space-between;
+}
 @media only screen and (max-width: 900px) {
 
     .tabBar{
