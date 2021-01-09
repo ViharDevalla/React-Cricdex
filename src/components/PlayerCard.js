@@ -1,5 +1,5 @@
 import React from 'react'
-
+import user from '../assets/defaultplayer.jpg'
 import '../css/style.css'
 
 function PlayerCard(props) {
@@ -10,7 +10,7 @@ function PlayerCard(props) {
         <div className='card'>
             <h2>{name}</h2>
             <div className="cardimg">
-                <img src={imgsrc} className='image' alt={name}/>
+                <img src={imgsrc} className='image' alt={user}/>
             </div>
             <div className='cardbody'>
                 Type : {type}<br/>
